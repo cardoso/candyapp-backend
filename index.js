@@ -33,7 +33,7 @@ app.get('/', function (req, res) {
 
 
 app.post('/', function (req, res) {
-  res.send('post:lapada')
+  res.send(req)
 })
 
 
