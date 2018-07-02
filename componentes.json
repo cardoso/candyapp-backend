@@ -1,17 +1,17 @@
 {
-   "componente1" : {
-      "name" : "resistor",
-      "tipo" :"pull-up"
+    "componente1": {
+      "name": "resistor",
+      "tipo": "pull-up",
       "local": "gaveta1"
-   },
-   "componente2" : {
-      "name" : "capacitor",
-      "tipo" :"pull-up"
-      "local": "gaveta1"
-   },
-   "componente3" : {
-      "name" : "fonte",
-      "tipo" :"pull-up"
+    },
+    "componente2": {
+      "name": "capacitor",
+      "tipo": "pull-up",
+      "local": "gaveta2"
+    },
+    "componente3": {
+      "name": "fonte",
+      "tipo": "pull-up",
       "local": "gaveta3"
-   }
-}
+    }
+  }

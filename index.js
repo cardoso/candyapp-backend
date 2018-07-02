@@ -2,42 +2,74 @@ var express = require('express')
 var app = express()
 var request = require("request");
 var pg = require('pg');
-const util = require('util');
 //or native libpq bindings
 //var pg = require('pg').native
 
-app.listen(port = process.env.PORT || 8000, function(){
-  console.info('Server listening on port ' + port);
-});
 
+
+
+
+app.get('/listComponentes', function (req, res) {
+   fs.readFile( __dirname + "/" + "componentes.json", 'utf8', function (err, data) {
+       console.log( data );
+       res.end( data );
+   });
+})
 
 var componente = {
-  name : "componente4",
-  tipo : "pull-up",
-  local : "1",
-  fullproduto : function() {
-      return this.name + " " + this.tipo + " " + this.local;
-  }
-};
+    "componente4" : {
+       "name" : "mohit",
+       "tipo" : "password4",
+       "local" :"gaveta2",
+    } 
+ }
+ 
+ app.post('/addComponente', function (req, res) {
+    // First read existing users.
+    fs.readFile( __dirname + "/" + "componentes.json", 'utf8', function (err, data) {
+        data = JSON.parse( data );
+        data["componente4"] = componente["componente4"];
+        console.log( data );
+        res.end(JSON.stringify(data));
+    });
+ })
+ 
+var server = app.listen(8000, function () {
 
+  var host = server.address().address
+  var port = server.address().port
 
-//console.log("componente:" + componente.tipo,"local:" + componente.local);
+  console.log("app listening at http://%s:%s", host, port)
 
-
-app.get('/componentes', function (req, res) {
-  fs.readFile( __dirname + "/" + "componentes.json", 'utf8', function (err, componentes) {
-    console.log(componentes);
-    res.end(componentes);
 })
 
+// app.listen(port = process.env.PORT || 8000, function () {
+//   console.info('Server listening on port ' + port);
+//   });
 
-app.post('/addcomponente', function (req, res) {
 
-  fs.readFile( __dirname + "/" + "componentes.json", 'utf8', function (err, componentes) {
-    data = JSON.parse( componentes );
-    componentes["componente4"] = componentes["componente4"];
-    console.log(componentes);
-    res.end( JSON.stringify(componentes));
-})
+// var componente = {
+//   name: "componente4",
+//   tipo: "pull-up",
+//   local: "gaveta"
+//   }
 
-});
+// //console.log("componente:" + componente.tipo,"local:" + componente.local);
+
+
+// app.get('/componentes', function (req, res) {
+//   fs.readFile(__dirname + "/" + "componentes.json", 'utf8', function (err, data) {
+//     console.log(data);
+//     res.end(data);
+//   })
+
+
+//   app.post('/addComponente', function (req, res) {
+//     // First read existing users.
+//     fs.readFile(__dirname + "/" + "componentes.json", 'utf8', function (err, data) {
+//       data = JSON.parse(data);
+//       data["componente4"] = componente["componente4"];
+//       console.log(data);
+//       res.end(JSON.stringify(data));
+//     })
+//   })
