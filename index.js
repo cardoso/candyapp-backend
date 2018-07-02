@@ -10,6 +10,7 @@ var pg = require('pg');
 
 
 app.get('/listComponentes', function (req, res) {
+  console.log("componentes do lapada"),
    fs.readFile( __dirname + "/" + "componentes.json", 'utf8', function (err, data) {
        console.log( data );
        res.end( data );
@@ -34,14 +35,12 @@ var componente = {
     });
  })
  
-var server = app.listen(8000, function () {
 
-  var host = server.address().address
-  var port = server.address().port
 
-  console.log("app listening at http://%s:%s", host, port)
-
-})
+const PORT = process.env.PORT || 8000 
+app.listen(PORT, () => {
+    console.log(`Our app is running on port ${ PORT }`);
+});
 
 // app.listen(port = process.env.PORT || 8000, function () {
 //   console.info('Server listening on port ' + port);
