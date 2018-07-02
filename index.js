@@ -2,6 +2,7 @@ var express = require('express')
 var app = express()
 var request = require("request");
 var pg = require('pg');
+const util = require('util');
 //or native libpq bindings
 //var pg = require('pg').native
 
@@ -33,7 +34,7 @@ app.get('/', function (req, res) {
 
 
 app.post('/', function (req, res) {
-  res.send(req.body)
+  
 })
 
 
