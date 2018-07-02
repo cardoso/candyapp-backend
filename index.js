@@ -30,7 +30,7 @@ var componentes = [resistor, capacitor, bateria]
 
 
 app.get('/', function (req, res) {
-  res.send(JSON.stringify(componentes))
+  res.send(util.inspect(componentes))
   
 })
 
