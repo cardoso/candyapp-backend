@@ -38,7 +38,7 @@ app.post('/addcomponente', function (req, res) {
     componentes["componente4"] = componentes["componente4"];
     console.log(componentes);
     res.end( JSON.stringify(componentes));
-});
+})
 
 
 
