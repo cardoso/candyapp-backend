@@ -24,17 +24,20 @@ var componente = {
       return this.name + " " + this.tipo + " " + this.local;
   }
 };
+
+var componentes = [resistor, capacitor, bateria]
 //console.log("componente:" + componente.tipo,"local:" + componente.local);
 
 
 app.get('/', function (req, res) {
-  res.send()
+  res.send(JSON.stringify(componentes))
   
 })
 
 
 app.post('/', function (req, res) {
-  res.send(util.inspect(componente, { showHidden: true, depth: null }));
+
+  res.send(util.inspect(componentes, { showHidden: true, depth: null }));
 
 })
 
