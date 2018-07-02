@@ -27,13 +27,13 @@ var componente = {
 
 
 app.get('/', function (req, res) {
-  res.send('componentes do  lapada')
+  res.send(req)
   
 })
 
 
 app.post('/', function (req, res) {
-  res.send(req)
+  res.send(JSON.stringify(req.body))
 })
 
 
