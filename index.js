@@ -40,7 +40,6 @@ app.post('/addcomponente', function (req, res) {
     res.end( JSON.stringify(componentes));
 });
 
-})
 
 
 
