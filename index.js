@@ -27,13 +27,13 @@ var componente = {
 
 
 app.get('/', function (req, res) {
-  res.send(req)
+  res.send()
   
 })
 
 
 app.post('/', function (req, res) {
-  res.send(JSON.stringify(req.body))
+  res.send(JSON.stringify(req))
 })
 
 
