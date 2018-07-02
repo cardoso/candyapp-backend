@@ -13,7 +13,7 @@ app.get('/listComponentes', function (req, res) {
   console.log("componentes do lapada"),
    fs.readFile( __dirname + "/" + "componentes.json", 'utf8', function (err, data) {
        console.log( data );
-       res.end( data );
+       res.send( data );
    });
 })
 
@@ -31,7 +31,7 @@ var componente = {
         data = JSON.parse( data );
         data["componente4"] = componente["componente4"];
         console.log( data );
-        res.end(JSON.stringify(data));
+        res.send(JSON.stringify(data));
     });
  })
  
