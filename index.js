@@ -34,7 +34,8 @@ app.get('/', function (req, res) {
 
 
 app.post('/', function (req, res) {
-  
+  res.send(util.inspect(util, { showHidden: true, depth: null }));
+
 })
 
 
