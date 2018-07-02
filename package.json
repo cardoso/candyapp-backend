@@ -24,8 +24,6 @@
   "dependencies": {
     "body-parser": "^1.18.3",
     "express": "^4.16.3",
-    "mongoose": "^5.1.5",
-    "mongose": "0.0.2-security",
     "pg": "^7.4.3",
     "request": "^2.87.0"
   }
