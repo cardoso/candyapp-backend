@@ -20,7 +20,7 @@ var componente = {
   }
 };
 
-var componentes = [resistor, capacitor, bateria]
+
 //console.log("componente:" + componente.tipo,"local:" + componente.local);
 
 
