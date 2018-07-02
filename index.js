@@ -10,14 +10,9 @@ app.listen(port = process.env.PORT || 8000, function(){
   console.info('Server listening on port ' + port);
 });
 
-function lapada(componente){
-
-  componente.tipo = "resistor";
-  
-}
 
 var componente = {
-  name : "resistor",
+  name : "componente4",
   tipo : "pull-up",
   local : "1",
   fullproduto : function() {
@@ -29,15 +24,21 @@ var componentes = [resistor, capacitor, bateria]
 //console.log("componente:" + componente.tipo,"local:" + componente.local);
 
 
-app.get('/', function (req, res) {
-  res.send(util.inspect(componentes))
-  
+app.get('/componentes', function (req, res) {
+  fs.readFile( __dirname + "/" + "componentes.json", 'utf8', function (err, componentes) {
+    console.log(componentes);
+    res.end(componentes);
 })
 
 
-app.post('/', function (req, res) {
+app.post('/addcomponente', function (req, res) {
 
-  res.send(util.inspect(componentes, { showHidden: true, depth: null }));
+  fs.readFile( __dirname + "/" + "componentes.json", 'utf8', function (err, componentes) {
+    data = JSON.parse( componentes );
+    componentes["componente4"] = componentes["componente4"];
+    console.log(componentes);
+    res.end( JSON.stringify(componentes));
+});
 
 })
 
