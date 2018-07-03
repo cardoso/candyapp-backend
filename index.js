@@ -2,6 +2,7 @@ var express = require('express')
 var app = express()
 var request = require("request");
 var pg = require('pg');
+var fs = require('fs')
 //or native libpq bindings
 //var pg = require('pg').native
 
