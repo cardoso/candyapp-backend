@@ -14,7 +14,7 @@ var fs = require("fs");
 app.get('/listComponentes', function (req, res) {
   console.log("componentes do lapada"),
    fs.readFile( __dirname + "/" + "componentes.json", 'utf8', function (err, data) {
-       console.log( data );
+       console.log(data);
        res.send( data );
    });
 })
